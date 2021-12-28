@@ -1,0 +1,65 @@
+.related-news{
+    position: relative;
+    width: 100%; //Eğer 100% açılıyorsa flex olan yerde width 100 verilir.
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+
+    ul{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 1170px;
+        background-color: var(--white-color);
+
+        li{
+            margin: 20px;
+
+            a{
+                display: flex;
+                width: 100%;
+                color: var(--black-color);
+
+                .left{
+                    img{
+                        width: 70px;
+                    }
+                }
+
+                .right{
+                    width: 180px;
+                    padding-left: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    
+                    .title{
+                        font-size: 14px;
+                        font-weight: 700;
+                    }
+
+                    .category{
+                        font-size: 10px;
+                        position: relative;
+
+                        &::after{
+                            content: "";
+                            position: absolute;
+                            bottom: 0;
+                            margin: 3px 5px;
+                            background-color: var(--grey-color);
+                            width: 5px;
+                            height: 5px;
+                            border-radius: 100%;
+                        }
+                    }
+                    
+                    .time{
+                        font-size: 10px;
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

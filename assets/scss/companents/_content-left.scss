@@ -1,0 +1,607 @@
+.content{
+    > .left{
+        position: relative;
+        width: calc(100% - 330px);
+        padding:40px;
+        border-right: 1px solid var(--tertiary-color);
+
+        figure{
+            position: relative;
+            
+            figcaption{
+                margin-bottom: 20px;
+
+                .breadcrumb{
+                    margin-bottom: 5px;
+                    span{
+                        font-size: 14px;
+                        &::after{
+                            content: "";
+                            background-image: url(../../images/icon/black/right.svg);
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            width: 10px;
+                            height: 10px;
+                            display: inline-block;
+                            padding: 0 10px;
+                        }
+                        &:last-child{
+                            font-weight: 700;
+                            &::after{
+                                //display: none;
+                                content: none;
+                            }
+                        }
+                    }
+                }
+                
+                .title{
+                    font-size: 30px;
+                    font-weight: 700;
+                    font-family: var(--font-playfair);
+                    line-height: 1.2;
+                    margin-bottom: 20px;
+                }
+        
+                .share{
+                    ul{
+                        display: flex;
+                        align-items: center;
+
+                        li{
+                            margin-right: 5px;
+                            position: relative;
+
+                            &:hover{                 
+                                i{
+                                    cursor: pointer;
+                                    @each $name, $value in $social-icons {
+                                        &.#{$name}{
+                                            background-color: #{nth($value, 2)};
+                                            background-image: url("../../images/icon/white/#{nth($value, 1)}.svg");
+                                        };
+                                    }
+                                }
+                            }
+
+                            i{
+                                display: block;
+                                width: 40px;
+                                height: 40px;
+                                background-size: 15px 15px;
+                                background-position: center;
+                                background-repeat: no-repeat;
+                                border: 1px solid var(--secondary-color);
+                                border-radius: 100%;
+
+                                @each $name, $value in $social-icons {
+                                    &.#{$name}{
+                                        background-image: url("../../images/icon/black/#{nth($value, 1)}.svg");
+                                    };
+                                }
+                            }
+
+                            .message::before{
+                                content: "12";
+                                position: absolute;
+                                top: -5px;
+                                right: 0;
+                                color: var(--white-color);
+                                background-color: var(--primary-color);
+                                width: 15px;
+                                height: 15px;
+                                border-radius: 100%;
+                                font-size: 10px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
+
+                            .text{
+                                text-align: center;
+                                .number{
+                                    font-size: 22px;
+                                    font-weight: 700;
+                                }
+                            }
+                        }
+                    }
+                }
+        
+                .info{
+                    margin-bottom: 30px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .date{
+                        span{
+                            font-size: 14px;
+                        }
+                        span:first-child{
+                            border-right: 1px solid var(--grey-color);
+                            padding-right: 5px;
+                        }
+                    }
+            
+                    .subscribe{
+                        display: flex;
+                        align-items: center;
+                        span{
+                            font-size: 14px;
+                            font-weight: 700;
+                            margin-right: 10px;
+                        }
+                        i{
+                            display: block;
+                            width: 130px;
+                            height: 30px;
+                            background-image: url(../../images/logo/google-news.svg);
+                            background-size: 120px;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            border: 1px solid var(--tertiary-color);
+                        }
+                    }
+                }
+        
+                .subtitle{
+                    font-size: 18px;
+                    line-height: 1.2;
+                    border-left: 3px solid var(--primary-color);
+                    padding-left: 10px;
+                }
+            }
+
+            .image{
+                position: relative;
+                width: calc(100% + 40px);
+                padding-top: 56%;
+                margin-left: -40px;
+                background-color: var(--grey-color);
+                overflow: hidden;
+
+                &::after{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 40px;
+                    height: 40px;
+                    margin: 10px;
+                    background-color: var(--white-color);
+                    border-radius: 100%;
+                    background-image: url(../../images/icon/black/arrow-v.svg);
+                    transform: rotate(225deg);
+                    background-size: 50%;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+                img{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                }  
+            }
+        }
+
+        .main{
+            position: relative;
+            
+            .author{
+                position: relative;
+                width: 290px;
+                height: 90px;
+                margin: -150px 0 0 0;
+                padding: 20px;
+                border-radius: 5px;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+                background-color: var(--white-color);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .wrapper{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    border-bottom: 1px dashed var(--grey-color);
+                    margin-top: 40px;
+                    padding-bottom: 20px;
+
+                    .ht{
+                        margin-right: 5px;
+                        img{
+                            width: 20px;
+                            height: 90px;
+                        }
+                    }
+                    .image{
+                        border-radius: 100%;
+                        width: 60px;
+                        height: 60px;
+                        margin-right: 5px;
+                    }
+                    .info{
+                        .name{
+                            font-size: 18px;
+                            font-weight: 700;
+                        }
+                        .mail{
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+            }
+
+            .news-detail{
+                position: relative;
+                margin-bottom: 30px;
+                padding: 20px 0 0 20px;
+                background-color: var(--white-color);
+
+                &::after {
+                    display: block;
+                    content: "";
+                    clear: both;
+                }
+                
+                p{
+                    font-size: 18px;
+                    line-height: 1.6;
+                    margin: 15px 0;
+                }
+
+                p:first-child::first-letter{
+                    font-size: 350%;
+                    float: left;
+                    line-height: .9;
+                    margin-right: 5px;
+                }
+
+                .widget{
+                    display: inline-flex;
+                    float: left;
+
+                    .wrapper{
+                        width: 250px;
+                        height: 300px;
+                        margin-right: 20px;
+                        border: 1px solid var(--grey-color);
+                        display: inline-block;
+
+                        .image{
+                            width: 250px;
+                            position: relative;
+
+                            img{
+                                width: 100%;
+                                z-index: 10;
+                            }
+
+                            &::after{
+                                content: "";
+                                position: absolute;
+                                bottom: -15px;
+                                right: 0;
+                                width: 40px;
+                                height: 40px;
+                                margin-right: 10px;
+                                background-color: var(--white-color);
+                                border-radius: 100%;
+                                background-image: url(../../images/icon/black/news.svg);
+                                background-position: center;
+                                background-size: 40%;
+                                background-repeat: no-repeat;
+                            }
+                        }
+        
+                        .text{
+                            padding: 25px 15px 15px 15px;
+                            font-size: 18px;
+                            font-family: var(--font-playfair);
+                            color: var(--secondary-color);
+                            line-height: 1.3;
+                        }
+                    }
+                }
+
+                .quotation{
+                    display: inline-flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding: 40px 60px;
+                    position: relative;
+                    margin-bottom: 20px;
+                    margin-right: 20px;
+                    float: left;
+
+                    &:before{
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        background-image: url(../../images/icon/orange/quotes.svg);
+                        background-position: center;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        width: 40px;
+                        height: 40px;
+                    }
+                    &:after{
+                        content: "";
+                        position: absolute;
+                        bottom: 20px;
+                        right: 0;
+                        background-image: url(../../images/icon/orange/reverse-quotes.svg);
+                        background-position: center;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        width: 40px;
+                        height: 40px;
+                    }
+                    .word{
+                        font-size: 28px;
+                        font-family: var(--font-playfair);
+                        line-height: 1.3;
+                        margin-bottom: 10px;
+                    }
+                    .person{
+                        font-size: 14px;
+                        color: var(--grey-color);
+                    }
+                }
+    
+                .journal-news{
+                    display: inline-flex;
+                    float: left;
+
+                    .wrapper{
+                        display: inline-block;
+                        width: 450px;
+                        height: 330px;
+                        margin-right: 20px;
+                        margin-bottom: 20px;
+                        border: 1px solid var(--tertiary-color);
+    
+                        .title{
+                            width: 330px;
+                            height: 50px;
+                            background-color: var(--primary-color);
+                            font-size: 18px;
+                            color: var(--white-color);
+                            border-bottom-right-radius: 10px;
+                            display: flex;
+                            align-items: center;
+                            padding-left: 20px;
+                        }
+    
+                        .swiper{
+                            .swiper-slide{
+                                display: flex;
+                                align-items: center;
+    
+                                .image{
+                                    width: 240px;
+                                    height: 240px;
+                                    img{
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: cover;
+                                    }
+                                }
+                
+                                .text{
+                                    width: calc(100% - 225px);
+                                    padding: 0 20px;
+                                    font-family: var(--font-playfair);
+                                    font-size: 20px;
+                                    font-weight: 700;
+                                }
+                            }
+    
+                            .swiper-button-prev{
+                                left: 0;
+                            }
+    
+                            .swiper-button-next{
+                                right: 0;
+                            }
+                            
+                            .swiper-button-prev, .swiper-button-next{
+                                position: absolute;
+                                bottom: 0;
+                                top: auto;
+                                width: 40px;
+                                height: 40px;
+                                background-color: var(--tertiary-color);
+                                color: var(--black-color);
+                                z-index: 20;
+    
+                                &:after{
+                                    font-size: 16px;
+                                    font-weight: 700;
+                                }
+                            }
+    
+                            .swiper-pagination{
+                                position: relative;
+                                bottom: 0;
+                                height: 40px;
+                                background-color: var(--white-color);
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+    
+                                .swiper-pagination-bullet, .swiper-pagination-bullet-active{
+                                    width: 40px;
+                                    height: 40px;
+                                    font-size: 20px;
+                                    font-family: var(--font-playfair);
+                                    font-weight: 700;
+                                    border-radius: 0;
+                                    background: none;
+                                    opacity: 1;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                            }
+                        }
+                    }
+                }
+    
+                .newsletter{
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    float: left;
+                    position: relative;
+
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        top: -3px;
+                        left: 0;
+                        width: 15px;
+                        height: 25px;
+                        margin-left: 10px;
+                        background-color: var(--white-color);
+                        border-radius: 5px;
+                        z-index: 30;
+                    }
+
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        top: 10px;
+                        left: 3px;
+                        width: 10px;
+                        height: 10px;
+                        margin-left: 10px;
+                        background-color: var(--primary-color);
+                        border-radius: 100%;
+                        z-index: 40;
+                    }
+
+                    .wrapper{
+                        position: relative;
+                        width: 400px;
+                        height: 220px;
+                        border-radius: 10px;
+                        color: var(--white-color);
+                        font-family: var(--font-playfair);
+                        background-image: url(../../images/dummy/16x9/small/8.png);
+                        background-position: center;
+                        background-size: 200%;
+                        background-repeat: no-repeat;
+                        margin-right: 20px;
+                        
+                        .form-newsletter{
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            padding: 45px 30px;
+                            background-color: var(--primary-color);
+                            border-radius: 10px;
+                            opacity: .95;
+        
+                            .text{
+                                padding-bottom: 25px;
+                                font-size: 18px;
+                                line-height: 1.2;
+                                color: var(--white-color);
+                            }
+            
+                            form{
+                                position: relative;
+                                .textbox{
+                                    width: 100%;
+                                    height: 50px;
+                                    padding: 0 10px 0 20px;
+                                    color: var(--white-color);
+                                    font-family: var(--font-source-sans);
+                                    font-size: 14px;
+                                    background-color: transparent;
+                                    border: 2px solid var(--white-color);
+                                    border-radius: 50px;
+                                    
+                                    &:focus{
+                                        outline: 0
+                                    }
+
+                                    &::placeholder{
+                                        color: var(--white-color);
+                                    }
+                                }
+            
+                                .button{
+                                    width: 30px;
+                                    height: 30px;
+                                    position: absolute;
+                                    top: 10px;
+                                    right: 10px;
+                                    background-color: var(--primary-color);
+                                    border-radius: 100%;
+                                    border: 2px solid var(--white-color);
+            
+                                    .submit-icon{
+                                        width: 20px;
+                                        height: 20px;
+                                        display: block;
+                                        background-image: url(../../images/icon/white/right.svg);
+                                        background-size: 10px;
+                                        background-position: center;
+                                        background-repeat: no-repeat;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    p{
+                        width: calc(100% - 400px);
+                        font-size: 18px;
+                        line-height: 1.6;
+                        margin: 15px 0;
+                    }
+                }
+            }
+
+            .category-area{
+                margin-bottom: 30px;
+                .list{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 2px dashed var(--tertiary-color);
+                    border-radius: 10px;
+                    li{
+                        width: 90px;
+                        height: 30px;
+                        margin: 20px 5px;
+                        background-color: var(--tertiary-color);
+                        border-radius: 50px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        &:hover{
+                            background-color: var(--primary-color);
+                            color: var(--white-color);
+                            font-weight: 700;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
