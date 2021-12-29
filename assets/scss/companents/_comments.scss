@@ -20,13 +20,16 @@
         }
         .comment-rules{
             position: absolute;
-            right: 40px;
+            right: 20px;
             margin-right: 40px;
             font-size: 14px;
+            a{
+                color: var(--primary-color);
+            }
         }
+        
         .cls-btn{
             position: relative;
-            right: 20px;
             width: 30px;
             height: 30px;
             background-color: var(--primary-color);
@@ -46,9 +49,9 @@
         }
     }
 
-    .reply, .popup{ //yorum kutuları
+    .reply{ //yorum kutuları
+        &.popup{display: none;}
         padding: 30px 10px;
-        
         form{
             position: relative;
 
@@ -88,6 +91,10 @@
         }
     }
 
+    .reply{
+        border-bottom: 1px dashed var(--white-color);
+    }
+
     .reply:nth-child(odd){
         form{
             .comment{
@@ -97,9 +104,33 @@
     }
 
     .list{
-         .item{ //yorumlar
+        .item{ //yorumlar
             position: relative;
             padding: 20px 10px;
+
+            &:nth-child(even){
+                background-color: var(--white-color);
+                .btn-reply, .btn{
+                    border: 2px solid var(--grey-color);
+                }
+            }
+
+            &.show{
+                .popup{
+                    display: block;
+                }
+
+                &:nth-child(even){
+                    .popup{
+                        form{
+                            .comment{
+                                background-color: var(--tertiary-color);
+                            }
+                        }
+                    }
+                }
+                
+            }
 
             .wrapper{
                 display: flex;
@@ -152,6 +183,7 @@
     
                 .buttons{
                     display: flex;
+
                     .btn-reply{
                         display: flex;
                         justify-content: center;
@@ -177,6 +209,7 @@
                         align-items: center;
                         justify-content: center;
                         margin-right: 5px;
+
                         .like, .dislike{
                             display: block;
                             background-position: center center;
@@ -187,37 +220,17 @@
                         }
     
                         .like{
+                            opacity: .5;
                             background-image: url(../../images/icon/black/like.svg);
                         }
                         .dislike{
+                            opacity: .5;
                             background-image: url(../../images/icon/black/dislike.svg);
                         }
                     }
                 }
-    
-                &:nth-child(even){
-                    background-color: var(--white-color);
-                    .reply, .btn{
-                        border: 2px solid var(--grey-color);
-                    }
-                }
-            }
-            
-            .popup{
-                display: none;
-                &.show{
-                    display: block;
-                }
             }
         }
-    }
-
-    .bg-white{
-        background-color: var(--white-color);
-    }
-
-    .border-dsh {
-        border-bottom: 1px dashed var(--white-color);
     }
 
     .show-more{

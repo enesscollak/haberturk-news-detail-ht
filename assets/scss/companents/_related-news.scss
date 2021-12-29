@@ -4,17 +4,21 @@
     display: flex;
     justify-content: center;
     margin-bottom: 5px;
-
-    ul{
+    max-width: 1170px;
+    overflow: hidden;
+    
+    .related-swiper{
         display: flex;
         justify-content: center;
         width: 100%;
         max-width: 1170px;
         background-color: var(--white-color);
 
-        li{
+        .swiper-slide{
             margin: 20px;
-
+            width: 250px;
+            height: auto;
+            
             a{
                 display: flex;
                 width: 100%;
